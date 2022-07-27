@@ -1,16 +1,17 @@
 <html>
     <head>
-        <title>Contatos</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/style.css">
+        <title>{% block title %}{% endblock %} - Blog Ocean</title>
     </head>
     <body>
-        <a href="https://www.oceanbrasil.com">Isso é um link </a>
-        <h1>Ana Caroline do Nascimento Silva</h1>
-        <h2>caroline.ana.n.s@gmail.com</h2>
-        <h3>12334567898</h3>
-
-        <ol>
-            <li>Item 1</li>
-            <li>Item 2</li>
-        </ol>
+        <h1>Blog Ocean</h1>
+        <nav></nav>
+        <section class="content">
+            {% block content %}
+            {% endblock %}
+        </section>
     </body>
 </html>
