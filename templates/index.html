@@ -1,17 +1,24 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/static/style.css">
-        <title>{% block title %}{% endblock %} - Blog Ocean</title>
-    </head>
-    <body>
-        <h1>Blog Ocean</h1>
-        <nav></nav>
-        <section class="content">
-            {% block content %}
-            {% endblock %}
-        </section>
-    </body>
-</html>
+{% extends "base.html" %}
+
+{%block title %} Página Inicial {% endblock %}
+
+{% block content %}
+{% for post in posts %}
+    <article class="post">
+        <header>
+            <div>
+                <h1>{{ post.title }}</h1>
+                <div class="about">
+                    by {{ post.author.username }} on {{ post.created.strftime('%d/%m/%Y') }}
+                </div>
+            </div>
+        </header>
+        <p class="body"> {{post.body}} </p>
+    </article>
+    {% if not loop.last %}
+        <hr>
+    {% endif %} 
+{% else %}
+    <p class = no-posts>Ops.. There are no posts to display!</p>
+{% endfor %}
+{% endblock%}
