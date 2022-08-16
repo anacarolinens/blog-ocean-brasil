@@ -3,12 +3,12 @@ Para deploy no Heroku
 
 FAzer login
 
-## cria app
+## Cria app
 heroku create <nome do app>
 ## cria Banco
 heroku addons:create heroku-postgresql:hobby-dev --app <nome do app>
-## ve config do app
+## Verifica config do app
 heroku config --app blog-python-ocean
 
-## para atualizar
+## Para atualizar
 git push heroku main
